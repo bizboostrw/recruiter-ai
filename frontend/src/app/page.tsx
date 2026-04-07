@@ -103,7 +103,7 @@ export default function HomePage() {
               <Brain size={14} className="text-accent" />
             </div>
             <span className="font-display font-bold text-white tracking-tight">
-              TalentSift
+              RecruiterAI 
             </span>
             <span className="hidden sm:block text-xs font-mono text-slate-600 border border-slate-800 rounded px-1.5 py-0.5">
               AI Recruiter
