@@ -20,10 +20,10 @@
     "pdf-parse": "^2.4.5"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^4.17.21",
-    "@types/multer": "^1.4.11",
-    "@types/node": "^20.11.20",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.25",
+    "@types/multer": "^1.4.13",
+    "@types/node": "^20.19.39",
     "@types/pdf-parse": "^1.1.5",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.3.3"
