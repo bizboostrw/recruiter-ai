@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TalentSift — AI Recruiter Screening",
+  title: "HireMindRW — AI Recruiter Screening",
   description: "Screen and rank candidates intelligently with AI",
 };
 

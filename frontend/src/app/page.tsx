@@ -103,7 +103,7 @@ export default function HomePage() {
               <Brain size={14} className="text-accent" />
             </div>
             <span className="font-display font-bold text-white tracking-tight">
-              RecruiterAI 
+              HireMindRW
             </span>
             <span className="hidden sm:block text-xs font-mono text-slate-600 border border-slate-800 rounded px-1.5 py-0.5">
               AI Recruiter
@@ -278,7 +278,7 @@ export default function HomePage() {
         )}
 
         <footer className="text-center mt-12 text-xs font-mono text-slate-700">
-          TalentSift · AI Recruiter · Built with Next.js + Gemini
+          HireMindRW · AI Recruiter · Built with Next.js + Gemini
         </footer>
       </main>
     </div>
