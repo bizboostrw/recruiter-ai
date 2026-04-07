@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Syne", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #080c14;
+    color: #f1f5f9;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: rgba(110, 231, 183, 0.25);
+    color: #6ee7b7;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111827;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-elevated {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(110, 231, 183, 0.15),
+      0 0 40px rgba(110, 231, 183, 0.05);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15),
+      0 0 40px rgba(245, 158, 11, 0.05);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 20px rgba(248, 113, 113, 0.15),
+      0 0 40px rgba(248, 113, 113, 0.05);
+  }
+
+  .score-ring {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .grid-bg {
+    background-image: linear-gradient(
+        rgba(110, 231, 183, 0.03) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(110, 231, 183, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .noise-overlay::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .text-gradient-green {
+    background: linear-gradient(135deg, #6ee7b7, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #fcd34d, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animate-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animate-delay-700 {
+    animation-delay: 700ms;
+  }
+  .animate-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  .opacity-0-init {
+    opacity: 0;
+  }
+}
+
+/* Custom input styles */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  color-scheme: dark;
+}
+
+/* Animated gradient border */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(#111827, #111827) padding-box,
+    linear-gradient(135deg, #6ee7b7, #3b82f6, #6ee7b7) border-box;
+  border: 1px solid transparent;
+}
+
+/* Score bar animation */
+@keyframes growWidth {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--target-width);
+  }
+}
+
+.score-bar {
+  animation: growWidth 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Stagger fade-up for cards */
+@keyframes staggerFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-card {
+  opacity: 0;
+  animation: staggerFadeUp 0.5s ease forwards;
+}
